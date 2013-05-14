@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{% block title %}Administrador Articulo 7{% endblock %}</title>
+<!--[if lt IE 7]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+<link href="{{STATIC_URL}}css/estiloAd.css" rel="stylesheet" type="text/css">
+<link href="{{STATIC_URL}}css/art.css" rel="stylesheet" type="text/css">
+<style type="text/css">{% block css %} {% endblock %}</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/PIE.js"></script>
+</head>
+<body>
+<header>
+  <div id="logotipo"></div>
+  <div id="cerrarS"></div>
+</header>
+<nav>
+  <ul>
+    <li><a href="/art7admin/usuarios/">Usuarios</a></li>
+    <li><a href="/art7admin/banner-principal/">Banner principal</a></li>
+    <li><a href="/art7admin/diario/">Lo de Diario</a>
+      <ul>
+        <li><a href="#">Efemerides</a></li>
+        <li><a href="#">Santoral</a></li>
+        <li><a href="#">Cultura</a></li>
+        <li><a href="#">Dato Musical</a></li>
+      </ul>
+    </li>
+    <li><a href="/art7admin/nota-principal/">Nota principal</a></li>
+    <li><a href="/art7admin/publicidad/">Publicidad</a>
+       <ul>
+        <li><a href="#">Pub. Superior</a></li>
+        <li><a href="#">Pub. Inferior</a></li>
+        <li><a href="#">Pub. Derecha 1</a></li>
+        <li><a href="#">Pub. Derecha 2</a></li>
+        <li><a href="#">Pub. Izquierda</a></li>
+      </ul>
+      </li>
+    <li><a href="/art7admin/noticias/">Noticias</a>
+      <ul>
+        <li><a href="#">Celaya</a></li>
+        <li><a href="#">Estado</a></li>
+        <li><a href="#">Municipios</a></li>
+        <li><a href="#">Nacional</a></li>
+        <li><a href="#">Internacional</a></li>
+        <li><a href="#">Nota Roja</a></li>
+      </ul>
+      </li>
+    <li><a href="/art7admin/articulos/">Artículos</a></li>
+    <li><a href="#">Galerias</a>
+	<ul>
+        <li><a href="/art7admin/video/">Video</a></li>
+        <li><a href="/art7admin/foto/">Fotografia</a></li>
+        <li><a href="/art7admin/audio/">Audio</a></li>
+      </ul>
+      </li>
+    <li><a href="#">Comentarios</a></li>
+  </ul>
+</nav>
+<div id="mainCont">
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
+</div>
+{% endfor %}
+{% endif %}
+{% block content %} {% endblock %}
+</div>
+<script type="text/javascript">{% block js %} {% endblock %}</script>
+</body>
+</html>

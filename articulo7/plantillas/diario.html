@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="agregar"> Efemerides&nbsp; <a href="/art7admin/diario/nuevo/"><img src="{{ STATIC_URL }}imag/agregarEfemerides.jpg" width="189" height="30" align="absmiddle" class="btnAgregar"></a></div>
+<article>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="bordered">
+<thead>
+
+    <tr>
+        <th width="20%">T&iacute;tulo</th>        
+        <th width="20%">Texto</th> 
+        <th width="20%">Categoría</th>
+        <th width="20%">Eliminar</th> 
+        <th width="20%">Editar</th> 
+        </tr>
+    </thead>
+    {% for d in diario %}
+    <tr>
+      <td align="center">{{ d.titulo }}</td>
+      <td align="center"><a href="#">{{ d.texto }}</a></td>
+      <td align="center"><a href="#">{{ d.categoria }}</a></td>
+      <td align="center"><a href="/art7admin/diario/{{ d.pk }}/eliminar/"><img src="{{ STATIC_URL }}imag/borrar.png" width="20" height="20"></a></td>
+      <td align="center"><a href="/art7admin/diario/{{ d.pk }}/"><img src="{{ STATIC_URL }}imag/lap.png" width="25" height="25"></a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</article>
+{% endblock %}

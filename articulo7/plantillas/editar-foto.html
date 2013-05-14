@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section id="sect">
+      <div id="u"><div id="titulo">Fotografía</div></div>
+      <div id="contDatos">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div id="campo">
+          <p>Título:</p>
+          {{ formulario.nombre }}
+        </div>
+        <div id="campo">
+          <p>Imagen actual:</p>
+            <p style="margin-left: 0; margin-right: 0; width: 280px;"><a target="_blank" href="{{ MEDIA_URL }}{{ formulario.foto.value }}">{{ formulario.foto.value }}</a></p>
+        </div>
+        <div id="campo">
+          <p>Cambiar imagen:</p>
+            {{ formulario.foto }}       
+        </div>
+        <div id="campo">
+          <p>Sección:</p>
+          {{ formulario.categoria }}
+        </div>
+        {% if formulario.errors %}
+        {% for error in formulario.errors %}<p style="color:red;">{{ error }}</p>{% endfor %}
+        {% endif %}
+        <div id="campo2">
+        	<input class="btn" type="submit" value="Guardar" ></form>
+        </div>
+      </form>
+      </div>
+    </section>
+{% endblock %}

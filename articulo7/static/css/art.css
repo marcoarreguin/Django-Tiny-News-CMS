@@ -1,0 +1,129 @@
+section, header, nav, footer, aside{
+	display:block;
+}
+body{
+	color:#333;
+	text-decoration: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+#sect{
+	height:auto;
+	width:720px;
+	margin:15px auto;
+}#titulo {
+	position: relative;
+	top: 0;
+	left: 25px;
+	color: #FFF;
+	height: auto;
+	width: 150px;
+	padding:10px;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: #666 0px 2px 3px;
+	-moz-box-shadow: #666 0px 2px 3px;
+	box-shadow: #666 0px 2px 3px;
+	background: #292929;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#292929), to(#363636));
+	background: -webkit-linear-gradient(#292929, #363636);
+	background: -moz-linear-gradient(#292929, #363636);
+	background: -ms-linear-gradient(#292929, #363636);
+	background: -o-linear-gradient(#292929, #363636);
+	background: linear-gradient(#292929, #363636);
+	-pie-background: linear-gradient(#292929, #363636);
+	behavior: url(../pie/PIE.htc);
+}
+#u {height: 20px; width: 100%;}
+#contDatos {
+	padding:50px 0 10px 0 ;
+	min-height:250px;
+	height:auto;
+	width:720px;
+	border:#666666 solid 2px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: #666 0px 2px 3px;
+	-moz-box-shadow: #666 0px 2px 3px;
+	box-shadow: #666 0px 2px 3px;
+	background: #DBDBDB;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#DBDBDB), to(#FFFFFF));
+	background: -webkit-linear-gradient(#DBDBDB, #FFFFFF);
+	background: -moz-linear-gradient(#DBDBDB, #FFFFFF);
+	background: -ms-linear-gradient(#DBDBDB, #FFFFFF);
+	background: -o-linear-gradient(#DBDBDB, #FFFFFF);
+	background: linear-gradient(#DBDBDB, #FFFFFF);
+	-pie-background: linear-gradient(#DBDBDB, #FFFFFF);
+	behavior: url(../pie/PIE.htc);
+	margin:0 auto 25px auto;
+}
+#campo {
+	color: #333;
+	margin: 0px auto;
+	height: 45px;
+	width: 480px;
+	border-bottom: 1px dotted #333;
+}
+#campo2 {
+	color: #333;
+	margin: 0px auto;
+	height: 45px;
+	width: 480px;
+}
+#campo3 {
+	color: #333;
+	margin: 0px auto;
+	height:400px;
+	width: 480px;
+	border-bottom: 1px dotted #333;
+}
+#campo p, #campo3 p {
+	float:left;
+	margin:15px 5px 0 25px;
+	height:15px;
+	width: 150px;
+	display:block;
+	text-align:left;
+}
+input{
+	float:left;
+	margin:10px 0 0 0;
+	border:#990000 solid 1px;
+}
+.btn{
+	display:block;
+	margin:8px 0 0 15px;
+	padding: 0 10px 0 10px;
+	width:auto;
+	height:30px;
+	color:#CCC;
+	border:none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: #666 0px 2px 3px;
+	-moz-box-shadow: #666 0px 2px 3px;
+	box-shadow: #666 0px 2px 3px;
+	background: #A3A3A3;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#A3A3A3), to(#595959));
+	background: -webkit-linear-gradient(#A3A3A3, #595959);
+	background: -moz-linear-gradient(#A3A3A3, #595959);
+	background: -ms-linear-gradient(#A3A3A3, #595959);
+	background: -o-linear-gradient(#A3A3A3, #595959);
+	background: linear-gradient(#A3A3A3, #595959);
+	-pie-background: linear-gradient(#A3A3A3, #595959);
+	behavior: url(../pie/PIE.htc);
+}
+.btn:hover{
+	color:#FFF;
+	background: #333;
+}
+#select{
+	color: #333;
+	border-bottom: 1px dotted #333;
+	margin: 10px 0 0 0;
+}

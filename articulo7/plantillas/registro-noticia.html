@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="sect">
+  <div id="u">
+        <div id="titulo">Noticias</div></div>
+      <div id="contDatos">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div id="campo">
+          <p>Categoría:</p>
+          {{ formulario.categoria }}
+        </div>
+        <div id="campo">
+          <p>Titulo:</p>
+         <input type="text" size="35" id="id_titulo" name="titulo">
+        </div>
+        <div id="campo">
+          <p>Seleccionar imagen:</p>
+          <div class="fileinputs">
+            <input type="file" size="25" class="field-hidden" id="id_imagen" name="imagen" onchange="$('#file').val($(this).val());">
+            <div class="fakefile">
+              <input type="text" id="file"/>
+              <input type="button" class="btn" value="Seleccionar">
+            </div>
+          </div>
+        </div>
+       <div id="campo3">
+          <p>Texto:</p>
+            {{ formulario.texto }}
+        </div>
+        <div id="campo">
+          <p>Link:</p>
+            {{ formulario.link }}
+        </div>
+        <div id="campo">
+          <p>Reportero:</p>
+          {{ formulario.reportero }}
+        </div>
+          {% if formulario.errors %}
+            {% for error in formulario.errors %}
+            <p style="color:red;">{{ error }}</p>
+            {% endfor%}
+          {% endif %}
+
+        <div id="campo2">
+        <input type="submit"  class="btn" id="button" value="Actualizar">
+        <input name="button" type="submit" class="btn" id="button" value="Actualizar y publicar">
+        
+        </div> 
+        </form>
+      </div>
+    </section>
+{% endblock %}

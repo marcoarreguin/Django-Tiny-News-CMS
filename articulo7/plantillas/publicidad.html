@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="agregar"> Publicidad <a href="/art7admin/publicidad/nuevo/"><img src="{{ STATIC_URL }}imag/agregarPubli.jpg" width="177" height="30" align="absmiddle" class="btnAgregar"></a></div>
+<article>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="bordered">
+                                        <thead>
+
+    <tr>
+        <th width="20%" align="right">Título</th>
+        <th width="20%" align="right">Link</th>    
+        <th width="20%" align="right">Eliminar</th> 
+        <th width="20%" align="right">Editar</th> 
+        </tr>
+    </thead>
+    {% for p in publicidades %}
+    <tr>
+      <td align="center">{{ p.titulo }}</td>
+      <td align="center">{{ p.link }}</td>
+      <td align="center"><a href="/art7admin/publicidad/{{ p.pk }}/eliminar/"><img src="{{ STATIC_URL }}imag/borrar.png" width="20" height="20"></a></td>
+      <td align="center"><a href="/art7admin/publicidad/{{ p.pk }}/"><img src="{{ STATIC_URL }}imag/lap.png" width="25" height="25"></a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</article>
+{% endblock %}

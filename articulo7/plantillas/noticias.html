@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="agregar"> Noticias<a href="/art7admin/noticias/nuevo/"><img src="{{ STATIC_URL }}imag/agregarNoti.jpg" width="177" height="30" align="absmiddle" class="btnAgregar"></a></div>
+<article>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="bordered">
+    <thead>
+
+    <tr>
+        <th width="15%" align="right">Título</th>        
+        <th width="20%" align="right">Noticia</th>
+        <th width="20%" align="right">Categoría</th>
+        <th width="13%" align="right">Conteo de visitas</th>
+        <th width="13%" align="right">Publico</th> 
+        <th width="13%" align="right">Reportero</th> 
+        <th width="13%" align="right">Eliminar</th> 
+        <th width="13%" align="right">Editar</th> 
+        </tr>
+    </thead>
+    {% for noticia in noticias %}
+      <tr>
+        <td align="center">{{ noticia.titulo }}</a></td>
+        <td align="center">{{ noticia.texto }}</td>
+        <td align="center">{{ noticia.categoria }}</td>
+        <td align="center">0</td>
+        <td align="center">{{ noticia.aprobado }}</td>
+        <td align="center">{{ noticia.reportero }}</td>
+        <td align="center"><a href="/art7admin/noticias/{{ noticia.pk }}/eliminar/"><img src="{{ STATIC_URL }}imag/borrar.png" width="20" height="20"></a></td>
+        <td align="center"><a href="/art7admin/noticias/{{ noticia.pk }}/"><img src="{{ STATIC_URL }}imag/lap.png"></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+</article>
+{% endblock %}

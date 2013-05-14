@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="sect">
+  <div id="u"><div id="titulo">Publicidad</div></div>
+      <div id="contDatos">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div id="campo">
+          <p>Posición:</p>
+         {{ formulario.posicion }}
+        </div>
+        <div id="campo">
+          <p>Titulo:</p>
+         <input type="text" size="35" id="id_titulo" name="titulo">
+        </div>
+        <div id="campo">
+          <p>Seleccionar imagen:</p>
+          <div class="fileinputs">
+            <input type="file" size="25" class="field-hidden" id="id_imagen" name="imagen" onchange="$('#file').val($(this).val());">
+            <div class="fakefile">
+              <input type="text" id="file"/>
+              <input type="button" class="btn" value="Seleccionar">
+            </div>
+          </div>
+        </div>
+        <div id="campo">
+          <p>Link:</p>
+          {{ formulario.link }}
+        </div>
+        <div id="campo2">
+        	<p><br>
+          <strong>Esta imagen no debe ser mayor a 955 pixeles de ancho y 90 pixeles de alto</strong></p>
+        </div>
+        <div id="campo2">
+        	<input class="btn" type="submit" value="Guardar" >
+        </div>
+        </form>
+      </div>
+      
+      
+      
+    	
+    </section>
+{% endblock %}

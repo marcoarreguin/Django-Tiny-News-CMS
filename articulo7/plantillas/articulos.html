@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="agregar"> Articulos <a href="/art7admin/articulos/nuevo/"><img src="{{ STATIC_URL }}imag/agregarArticulo.jpg" width="177" height="30" align="absmiddle" class="btnAgregar"></a></div>
+<article>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="bordered">
+  <thead>
+
+    <tr>
+        <th width="20%" align="right">Artículista</th>        
+        <th width="20%" align="right">Título</th> 
+        <th width="20%" align="right">Artículo</th> 
+        <th width="20%" align="right">Eliminar</th> 
+        <th width="20%" align="right">Editar</th> 
+        </tr>
+    </thead>
+    {% for articulo in articulos %}
+    <tr>
+      <td align="center">{{ articulo.articulista }}</td>
+      <td align="center">{{ articulo.titulo }}</td>
+      <td align="center">{{ articulo.texto }}</td>
+      <td align="center"><a href="/art7admin/articulos/{{ articulo.pk }}/eliminar/"><img src="{{ STATIC_URL }}imag/borrar.png" width="20" height="20"></a></td>
+      <td align="center"><a href="/art7admin/articulos/{{ articulo.pk }}/"><img src="{{ STATIC_URL }}imag/lap.png" width="25" height="25"></a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</article>
+{% endblock %}

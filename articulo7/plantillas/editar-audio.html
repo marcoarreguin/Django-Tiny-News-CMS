@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section id="sect">
+      <div id="u"><div id="titulo">Audio</div></div>
+      <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+      <div id="contDatos">
+        <div id="campo">
+          <p>Título:</p>
+          {{ formulario.nombre }}
+        </div>
+        <div id="campo">
+          <p>Audio actual:</p>
+            <p style="margin-left: 0; margin-right: 0; width: 280px;"><a target="_blank" href="{{ MEDIA_URL }}{{ formulario.mp3.value }}">{{ formulario.mp3.value }}</a></p>
+        </div>
+        <div id="campo">
+          <p>Cambiar audio:</p>
+            {{ formulario.mp3 }}       
+        </div>
+
+        {% if formulario.errors %}
+        {% for error in formulario.errors %}<p style="color:red;">{{ error }}</p>{% endfor %}
+        {% endif %}
+
+        <div id="campo2">
+        	<input class="btn" type="submit" value="Guardar">
+        </div>
+        </form>
+      </div>
+      
+      
+      
+    	
+    </section>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="agregar">Nota principal<a href="/art7admin/nota-principal/nuevo/"><img src="{{ STATIC_URL }}imag/agregarNota.jpg" class="btnAgregar"></a></div>
+<article>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="bordered">
+<thead>
+
+    <tr>
+        <th width="25%">T&iacute;tulo</th>        
+        <th width="25%">Texto</th>
+        <th width="25%">Link</th> 
+        <th width="25%">Eliminar</th> 
+        <th width="25%">Editar</th> 
+        </tr>
+    </thead>
+    {% for p in principales %}
+    <tr>
+      <td align="center">{{ p.titulo }}</td>
+      <td align="center"><a href="#">{{ p.texto }}</a></td>
+      <td align="center"><a href="#">{{ p.link }}</a></td>
+      <td align="center"><a href="/art7admin/nota-principal/{{ p.pk }}/eliminar/"><img src="{{ STATIC_URL }}imag/borrar.png" width="20" height="20"></a></td>
+      <td align="center"><a href="/art7admin/nota-principal/{{ p.pk }}/"><img src="{{ STATIC_URL }}imag/lap.png" width="25" height="25"></a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</article>
+{% endblock %}

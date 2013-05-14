@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="sect">
+  <div id="u"><div id="titulo">Banner Principal</div></div>
+      <div id="contDatos">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div id="campo">
+          <p>Título:</p>
+          <input type="text" size="35" id="id_titulo" name="titulo">
+        </div>
+        <div id="campo">
+          <p>Seleccionar imagen:</p>
+          <div class="fileinputs">
+            <input type="file" size="25" class="field-hidden" id="id_imagen" name="imagen" onchange="$('#file').val($(this).val());">
+            <div class="fakefile">
+              <input type="text" id="file"/>
+              <input type="button" class="btn" value="Seleccionar">
+            </div>
+          </div>
+          
+        </div>
+        <div id="campo">
+          <p>Link:</p>
+          <input type="text" size="35" id="id_link" name="link">
+        </div>
+        
+        {% if formulario.errors %}
+        {% for error in formulario.errors %}<p style="color:red;">{{ error }}</p>{% endfor %}
+        {% endif %}
+
+        <div id="campo2">
+        	<input class="btn" type="submit" value="Guardar" >
+        </div>
+        </form>
+      </div>  
+    </section>
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="sect">
+  <div id="u"><div id="titulo">Título de la sección pendiente</div></div>
+      <div id="contDatos">
+        <form action="" method="post" {% if formulario.is_multipart %}enctype="multipart/form-data"{% endif %} >{% csrf_token %}
+        {% for field in formulario %}
+        {% if field.errors %}
+        <div id="campo error">
+          <p>{{ field.label }}:</p>
+          {{ field }}
+        </div>
+        {% for error in  field.errors %}{{ error }}{% endfor %}
+        {% else %}
+        <div id="campo">
+          <p>{{ field.label }}:</p>
+          {{ field }}
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div id="campo2">
+        	<input class="btn" type="submit" value="Guardar" >
+        </div>
+        </form>
+      </div>  
+    </section>
+{% endblock %}
